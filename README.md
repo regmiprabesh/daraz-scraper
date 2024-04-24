@@ -1,6 +1,6 @@
 # Daraz Wine,Beer & Spirits Scraper
 
-This is a python based web scraping application that collects data about all wine beer & spirits products and their categories from Daraz. The scraper is built using the Scrapy framework and stores the scraped data in an SQLite database.
+This is a python based web scraping application that collects data about all wine beer & spirits products and their categories from Daraz. The scraper is built using the Scrapy framework and stores the scraped data in an SQLite database along with jsonl file.
 It uses the Playwright package to handle JavaScript loaded website and the Scrapy-User-Agents package to rotate user agents for each request.
 
 
@@ -24,9 +24,16 @@ python -m venv venv_scraper
 ```
 4. Activate the virtual environment
 
-```bash
-source venv_scraper/bin/activate
-```
+- For Mac/Linux 
+  
+  ```bash
+  source venv_scraper/bin/activate
+  ```
+- For Windows 
+  
+  ```bash
+  .\venv_scraper\Scripts\activate.bat
+  ```
 
 5. Install the required Python packages. 
 ```bash
@@ -74,7 +81,7 @@ daraz-scraper/
 -   `spiders/`: This directory is where spiders kept.
 -   `daraz_spider.py`: This is the spider that scrapes the Daraz website Its child categories under main category Wines, Beer and Spirits and their products accordingly.
 -   `scrapy.cfg`: This is the project configuration file. It contains settings for deploying the project.
--   `data/`: This directory is where database is kept.
+-   `data/`: This directory is where database and jsonl files are kept.
 -   `daraz.db`: This is the sqlite database file where data is stored after scraping
 -   `category.jsonl`: This file contains list of  subcategories under wines,beer & spirits scraped in jsonl format.
 -   `product.jsonl`: This file contains list of  products scraped in jsonl format.
